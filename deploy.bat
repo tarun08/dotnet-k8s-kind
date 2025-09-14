@@ -12,7 +12,7 @@ echo 📦 Loading image into kind cluster...
 kind load docker-image %APP_NAME%:local
 
 echo 🚀 Applying Kubernetes manifests...
-kubectl apply -f k8s\namespace.yaml
+kubectl apply -f k8s\namespace.yml
 kubectl apply -f k8s\deployment\
 kubectl apply -f k8s\service\
 
