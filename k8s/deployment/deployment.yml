@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebapi-deployment
+  namespace: dotnet-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mywebapi
+  template:
+    metadata:
+      labels:
+        app: mywebapi
+    spec:
+      containers:
+        - name: mywebapi
+          image: mywebapi:local
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

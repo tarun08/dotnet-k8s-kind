@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mywebapi-service
+  namespace: dotnet-app
+spec:
+  selector:
+    app: mywebapi
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
